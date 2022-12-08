@@ -75,7 +75,7 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         if(prediction[0].className == "CheckerSkirt" && prediction[0].probability.toFixed(2) == 1.00){
-          img2 = '<img src = "assets/post18.png">';
+          img2 = '<img src = "assets/post18_m.png">';
           labelContainer.childNodes[0].innerHTML = img2
         } else if(prediction[1].className == "BlackSkirt" && prediction[1].probability.toFixed(2) == 1.00){
             img = '<img src = "assets/post17.png">';
