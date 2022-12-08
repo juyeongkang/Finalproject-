@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <title>In progress Final project</title>
+  <title>our closet</title>
 </head>
 <body>
-  <div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
-<div id="webcam-container"></div>
-<div id="label-container"></div>
+  <img src="assets/webbanner.png" alt="clothe garmant" width="100%" height="100%">
+  <center><button type="button" onclick="init()">Start Scanning</button>
+  <div id="label-container"></div>
+  <div id="webcam-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
@@ -24,6 +24,7 @@
     var img;
     var img2;
     var img3;
+    var img4;
     let model, webcam, labelContainer, maxPredictions;
 
 
@@ -74,18 +75,18 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         if(prediction[0].className == "WhiteShirt" && prediction[0].probability.toFixed(2) == 1.00){
-          img2 = '<img src = "assets/cody2.png">';
-          labelContainer.childNodes[0].innerHTML = img2 + "With Hoodie, wear THIS"
+          img2 = '<img src = "assets/post6.png">';
+          labelContainer.childNodes[0].innerHTML = img2
         } else if(prediction[1].className == "GrayShirt" && prediction[1].probability.toFixed(2) == 1.00){
-            img = '<img src = "assets/cody1.png">';
-          labelContainer.childNodes[0].innerHTML = img + "You have Bike Jacket, wear THIS"
+            img = '<img src = "assets/post5.png">';
+          labelContainer.childNodes[0].innerHTML = img
 
         } else if(prediction[2].className == "HighNeckKnit" && prediction[2].probability.toFixed(2) == 1.00){
-            img3 = '<img src = "assets/cody3.png">';
-            labelContainer.childNodes[0].innerHTML = img3 +    "With that white shirt, wear THIS"
+            img3 = '<img src = "assets/post4.png">';
+            labelContainer.childNodes[0].innerHTML = img3
           } else if(prediction[3].className == "Hoodie" && prediction[3].probability.toFixed(2) == 1.00){
-              img3 = '<img src = "assets/cody3.png">';
-              labelContainer.childNodes[0].innerHTML = img3 +    "With that white shirt, wear THIS"
+              img4 = '<img src = "assets/post7.png">';
+              labelContainer.childNodes[0].innerHTML = img4
             } else {
               labelContainer.childNodes[0].innerHTML = "What CAN I wear?"
           }
@@ -102,7 +103,7 @@
 
 <footer>
   <center><p>
-  <a href="men_women.html" class="button button2">⬅<br></a><br>
+  <a href="men_top_vs_bottom.html" class="button button2">⬅<br></a><br>
 our closet©</p></center>
 </footer>
   </body>

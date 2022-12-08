@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  <title>our closet</title>
+</head>
+<body>
+  <!-- <a href ="mobile.html">mobile</a>
+  <a href ="web.html">web</a> -->
+
+<a href ="index.html"><img src="assets/webbanner.png" alt="clothe garmant" width="100%" height="100%"></a>
+  <center><h1>Which Closet You Like to Open?
+  </h1></center>
+  <br>
+  <center><a href="women_jacket.html" class="button button1">Jacket Closet</a><a href="women_top.html" class="button button1">Top Closet</a> <a href="women_bottom2.html" class="button button1">Bottom Closet</a></center>
+
+<br>
+<footer>
+  <center><p>
+  <a href="men_women.html" class="button button2">⬅<br></a><br>
+our closet©</p></center>
+</footer>
+<!-- <button type="button" onclick="init()">Start</button>
+<div id="webcam-container"></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "./my_model/";
+    var img;
+    var img2;
+    var img3;
+    let model, webcam, labelContainer, maxPredictions;
+
+
+    // Load the image model and setup the webcam
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip // 435, 435
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append elements to the DOM
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop() {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    // run the webcam image through the image model
+    async function predict() {
+        // predict can take in an image, video or canvas html element
+        const prediction = await model.predict(webcam.canvas);
+        if(prediction[0].className == "WhiteShirt" && prediction[0].probability.toFixed(2) == 1.00){
+          img2 = '<img src = "assets/cody2.png">';
+          labelContainer.childNodes[0].innerHTML = img2 + "With Hoodie, wear THIS"
+        } else if(prediction[1].className == "GrayShirt" && prediction[1].probability.toFixed(2) == 1.00){
+            img = '<img src = "assets/cody1.png">';
+          labelContainer.childNodes[0].innerHTML = img + "You have Bike Jacket, wear THIS"
+
+        } else if(prediction[2].className == "HighNeckKnit" && prediction[2].probability.toFixed(2) == 1.00){
+            img3 = '<img src = "assets/cody3.png">';
+            labelContainer.childNodes[0].innerHTML = img3 +    "With that white shirt, wear THIS"
+          } else if(prediction[3].className == "Hoodie" && prediction[3].probability.toFixed(2) == 1.00){
+              img3 = '<img src = "assets/cody3.png">';
+              labelContainer.childNodes[0].innerHTML = img3 +    "With that white shirt, wear THIS"
+            } else {
+              labelContainer.childNodes[0].innerHTML = "What CAN I wear?"
+          }
+
+        // for (let i = 0; i < maxPredictions; i++) {
+        //     const classPrediction =
+        //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        //     labelContainer.childNodes[i].innerHTML = classPrediction;
+        // }
+    }
+
+
+</script> -->
+
+
+  </body>
+  </html>
